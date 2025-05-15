@@ -1,0 +1,15 @@
+<!-- <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="icon-home" width="64" height="64" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="32" fill="black" fill-opacity="0.25"/>
+<path d="M49 30.2679C50.3333 31.0377 50.3333 32.9623 49 33.7321L25 47.5885C23.6667 48.3583 22 47.396 22 45.8564L22 18.1436C22 16.604 23.6667 15.6417 25 16.4115L49 30.2679Z" fill="white"/>
+  </symbol>
+  <symbol id="icon-user" viewBox="0 0 24 24">
+    <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
+  </symbol>
+</svg>
+
+
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+<circle cx="32" cy="32" r="32" fill="black" fill-opacity="0.25"/>
+<path d="M49 30.2679C50.3333 31.0377 50.3333 32.9623 49 33.7321L25 47.5885C23.6667 48.3583 22 47.396 22 45.8564L22 18.1436C22 16.604 23.6667 15.6417 25 16.4115L49 30.2679Z" fill="white"/>
+</svg> -->

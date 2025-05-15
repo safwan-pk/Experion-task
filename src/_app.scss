@@ -1,0 +1,40 @@
+.main-wrapper{display:flex; flex-direction:column; height:100vh; padding:60px 0 0 0;}
+.content-area{display:flex; flex-direction:column; flex:1;}
+
+
+$primary-color:#0F255F;
+$roboto-400:'robotoregular', sans-serif;
+$roboto-500:'robotomedium', sans-serif;
+$roboto-600:'robotobold', sans-serif;
+$roboto-700:'robotoblack', sans-serif;
+
+@font-face {
+  font-family: 'robotoregular';
+  src: url('./assets/fonts/roboto-variablefont_wdthwght-webfont.woff2') format('woff2'),
+       url('./assets/fonts/roboto-variablefont_wdthwght-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'robotomedium';
+  src: url('./assets/fonts/Roboto-Medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'robotobold';
+  src: url('./assets/fonts/Roboto-Bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'robotoblack';
+  src: url('./assets/fonts/Roboto-Black-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+  
+  

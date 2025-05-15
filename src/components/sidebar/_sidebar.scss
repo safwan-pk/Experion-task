@@ -1,0 +1,12 @@
+.sidebar{position:fixed; top:0; bottom:0; height:100vh; left:0; background:$primary-color; width:80px;
+    .logo{padding:21px 25px; border-bottom:1px solid rgb(255 255 255 / 14%);}
+    .sidebar-menu-list{padding:0; margin:0;
+        li{list-style:none; padding:23px 30px;
+            .menu-item{display:flex; align-items:center; text-decoration:none;}
+            .menu-nm{margin:0 0 0 17px; font:16px $primary-font; color:#fff; display:none;}
+        }
+    }
+    &:hover{width:247px;
+        .menu-nm{display:block !important;}
+    }
+}
