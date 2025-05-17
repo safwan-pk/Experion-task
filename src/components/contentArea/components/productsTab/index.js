@@ -57,32 +57,32 @@ function ProductsTab() {
                     <h4 className="title4 w-100">shoes</h4>
                     <ul className="nav nav-tabs" id="myTab" role="tablist">
                         <li className="nav-item" role="presentation">
-                        <button className="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
-                            type="button" role="tab" aria-controls="home" aria-selected="true">
+                        <button className="nav-link active" id="sneakers-tab" data-bs-toggle="tab" data-bs-target="#sneakers"
+                            type="button" role="tab" aria-controls="sneakers" aria-selected="true">
                             <span className="item-name">Sneakers</span> 
-                            <span className="item-count">06</span>  
+                            <span className="item-count" aria-label="6 items">06</span>  
                         </button>
                         </li>
                         <li className="nav-item" role="presentation">
-                        <button className="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
-                            type="button" role="tab" aria-controls="profile" aria-selected="false">
+                        <button className="nav-link" id="sports-shoes-tab" data-bs-toggle="tab" data-bs-target="#sports-shoes"
+                            type="button" role="tab" aria-controls="sports-shoes" aria-selected="false">
                             <span className="item-name">Sports Shoes</span>
-                            <span className="item-count">02</span> 
+                            <span className="item-count" aria-label="2 items">02</span> 
                         </button>
                         </li>
                         <li className="nav-item" role="presentation">
-                        <button className="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact"
-                            type="button" role="tab" aria-controls="contact" aria-selected="false">
-                            <span className="item-name">Sports Shoes</span>
-                            <span className="item-count">03</span> 
+                        <button className="nav-link" id="casual-shoes-tab" data-bs-toggle="tab" data-bs-target="#casual-shoes"
+                            type="button" role="tab" aria-controls="casual-shoes" aria-selected="false">
+                            <span className="item-name">Casual Shoes</span>
+                            <span className="item-count" aria-label="3 items">03</span> 
                         </button>
                         </li>
                     </ul>
-                    <button className="border-btn">View all</button>
+                    <button className="border-btn" aria-label="View all shoes">View all</button>
                 </div>
                 {/* Tab content area displaying products based on selected tab */}
                 <div className="tab-content" id="myTabContent">
-                    <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div className="tab-pane fade show active" id="sneakers" role="tabpanel" aria-labelledby="sneakers-tab">
                         <div className="row">
                             {productData.map((product) => (
                                 <div className="col-md-4 mb-4" key={product.id}>
@@ -91,7 +91,7 @@ function ProductsTab() {
                                             {product.badge && (
                                                 <span className="seller-badge">{product.badge}</span>
                                             )}
-                                            <img src={product.image} alt="Product" className="img-fluid" />
+                                            <img src={product.image} alt={product.title} className="img-fluid" />
                                         </div>
                                         <h5 className="title5 roboto-medium mb-1">{product.title}</h5>
                                         <p className="mb-2">{product.subtitle}</p>
@@ -106,12 +106,13 @@ function ProductsTab() {
                                                     <span
                                                         key={index}
                                                         className={`star ${index < product.ratings ? "active" : ""}`}
+                                                        aria-hidden="true"
                                                     >
                                                         ★
                                                     </span>
                                                 ))}
                                             </div>
-                                            <p className="count mb-0">{product.ratingCount} ratings</p>
+                                            <p className="count mb-0" aria-label={`${product.ratingCount} ratings`}>{product.ratingCount} ratings</p>
                                         </div>
                                     </div>
                                 </div>
@@ -119,11 +120,11 @@ function ProductsTab() {
                         </div>
                     </div>
                     {/* Empty tab panes for other categories */}
-                    <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        No data...
+                    <div className="tab-pane fade" id="sports-shoes" role="tabpanel" aria-labelledby="sports-shoes-tab">
+                        <p className="text-center py-4">No data available for Sports Shoes</p>
                     </div>
-                    <div className="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                        No data...
+                    <div className="tab-pane fade" id="casual-shoes" role="tabpanel" aria-labelledby="casual-shoes-tab">
+                        <p className="text-center py-4">No data available for Casual Shoes</p>
                     </div>
                 </div>
             </div>

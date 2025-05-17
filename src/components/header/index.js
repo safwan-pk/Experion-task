@@ -17,11 +17,25 @@ function Header({ onToggleSidebar }) {
                 {/* Search area with input field and search icon */}
                 <div className="head-search-area">
                     <div className="search-box">
-                        <input type="text" placeholder="Search for products, brands and more" />
-                        <svg className="search-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <label htmlFor="search-input" className="visually-hidden">Search for products, brands and more</label>
+                        <input 
+                            type="text" 
+                            id="search-input"
+                            placeholder="Search for products, brands and more" 
+                            aria-label="Search for products, brands and more"
+                        />
+                        <svg 
+                            className="search-icon" 
+                            width="24" 
+                            height="24" 
+                            viewBox="0 0 24 24" 
+                            fill="none" 
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true"
+                        >
                         <g opacity="0.6">
-                        <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#041131" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M21 21L16.65 16.65" stroke="#041131" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#041131" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M21 21L16.65 16.65" stroke="#041131" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                         </g>
                         </svg>
                     </div>
@@ -139,19 +153,19 @@ function Header({ onToggleSidebar }) {
                 </div>
                 {/* Profile area with menu button, notification icons and user profile dropdown */}
                 <div className="head-profile-area">
-                    <button className="menu-button btn" onClick={onToggleSidebar}>
-                        <Icon name="menuHamburg" width={24} height={24} />
+                    <button className="menu-button btn" onClick={onToggleSidebar} aria-label="Toggle menu">
+                        <Icon name="menuHamburg" width={24} height={24} aria-hidden="true" />
                     </button>
                     <div className="head-profile-area-inn">
                         {/* Favorites/wishlist button */}
-                        <button className="icon-btn">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <button className="icon-btn" aria-label="Favorites">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <path fillRule="evenodd" clipRule="evenodd" d="M19.6596 5.67794C20.1408 6.22368 20.5034 6.8674 20.7237 7.56672C20.9614 8.29783 21.0472 9.07162 20.9754 9.83856C20.9037 10.6055 20.6761 11.3487 20.3072 12.0205C19.0193 14.3407 16.4307 16.9341 12.6108 19.7273C12.4364 19.8546 12.2274 19.9231 12.0131 19.9231C11.7988 19.9231 11.5898 19.8546 11.4154 19.7273C7.57748 16.9289 4.98886 14.3354 3.70354 12.0179C3.3307 11.3453 3.09988 10.6003 3.02593 9.83091C2.95199 9.06154 3.03658 8.28487 3.27425 7.55095C3.49563 6.85381 3.85883 6.21245 4.33998 5.669C4.82113 5.12556 5.40934 4.69235 6.06595 4.39782C7.57234 3.7199 9.13271 3.90909 10.5774 4.96013C11.1092 5.35023 11.5873 5.81155 11.999 6.33174C12.4106 5.81155 12.8887 5.35023 13.4205 4.96013C14.8678 3.91434 16.4256 3.72253 17.932 4.40045C18.5896 4.69682 19.1784 5.1322 19.6596 5.67794Z" stroke="black" strokeWidth="1.5"/>
                             </svg>
                         </button>
                         {/* Shopping cart button with notification indicator */}
-                        <button className="cart-icon-head icon-btn notify">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <button className="cart-icon-head icon-btn notify" aria-label="Shopping cart with notifications">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <path d="M4 20.0714L5.28 7.5H18.72L20 20.0714H4Z" stroke="black" strokeWidth="1.5"/>
                             <path d="M15.4286 9.78573V6.35716C15.4286 4.46361 13.8935 2.92859 12 2.92859V2.92859C10.1064 2.92859 8.57141 4.46361 8.57141 6.35716V9.78573" stroke="black" strokeWidth="1.5"/>
                             </svg>
@@ -159,15 +173,16 @@ function Header({ onToggleSidebar }) {
                         {/* User profile dropdown with profile picture and options */}
                         <div className="dropdown">
                             <button className="btn d-flex align-items-center dropdown-toggle"
-                                type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src={avatar} alt="Profile" className="rounded-circle me-2" width="34" height="34" />
+                                type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false"
+                                aria-haspopup="true">
+                                <img src={avatar} alt="John Paul's profile" className="rounded-circle me-2" width="34" height="34" />
                                 <span className="d-none d-md-inline">John Paul</span>
                             </button>
-                            <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
-                                <li><a className="dropdown-item" href="#">My Profile</a></li>
-                                <li><a className="dropdown-item" href="#">Settings</a></li>
+                            <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown" role="menu">
+                                <li><a className="dropdown-item" href="/profile" role="menuitem">My Profile</a></li>
+                                <li><a className="dropdown-item" href="/settings" role="menuitem">Settings</a></li>
                                 <li><hr className="dropdown-divider" /></li>
-                                <li><a className="dropdown-item" href="#">Logout</a></li>
+                                <li><a className="dropdown-item" href="/logout" role="menuitem">Logout</a></li>
                             </ul>
                         </div>
                     </div>

@@ -19,11 +19,17 @@ function App() {
 
   return (
     <React.Fragment>
+      {/* Skip to main content link for keyboard users */}
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
       <div className="main-wrapper">
         <Header onToggleSidebar={toggleSidebar} />
         <div className="inner-wrapper">
           <Sidebar isOpen={sidebarOpen} />
-          <ContentArea />
+          <main id="main-content" tabIndex="-1">
+            <ContentArea />
+          </main>
         </div>
       </div>
     </React.Fragment>

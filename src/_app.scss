@@ -54,6 +54,55 @@ body{background:$body-color !important; font:14px $roboto-400}
 p{font:14px/22px $roboto-400;}
 p.small{font:12px $roboto-400}
 
+// Accessibility styles
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: $blue-color;
+  color: $white-color;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s;
+
+  &:focus {
+    top: 0;
+  }
+}
+
+// Visually hide elements while keeping them accessible to screen readers
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+// Focus styles for keyboard accessibility
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+[tabindex]:focus {
+  outline: 2px solid $blue-color;
+  outline-offset: 2px;
+}
+
+// Only show focus styles when using keyboard navigation
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+.focus-visible {
+  outline: 2px solid $blue-color;
+  outline-offset: 2px;
+}
+
 .icon-btn{background-color:transparent; border:none; padding:0;}
 .link-btn{background:none; border:none; color:#1750FF; text-decoration:none;
   &:hover{text-decoration:underline;}
