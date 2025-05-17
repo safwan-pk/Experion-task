@@ -1,0 +1,32 @@
+// Colors variables
+$body-color:#FCFCFC;
+$primary-color:#0F255F;
+$violet-color:#536DFE;
+$light-violet-color:#E8E8FF;
+$white-color:#fff;
+$grey-color:#C4C4C4;
+$orange-color:#EFA53A;
+$yellow-color:#EBBC11;
+$red-color:#FF1D00;
+$blue-color:#0F42DF;
+
+$text-color-dark:#041131;
+$text-color-light:#4F586F;
+
+
+// Fonts variables
+$roboto-400:'robotoregular', sans-serif;
+$roboto-500:'robotomedium', sans-serif;
+$roboto-600:'robotosemibold', sans-serif;
+$roboto-700:'robotobold', sans-serif;
+
+
+
+
+// *** Mixin start *** //
+@mixin flex-row{display:flex; flex-direction:row; align-items:center;}
+@mixin flex-column{display:flex; flex-direction:column; align-items:center;}
+@mixin shadow-box{background:$white-color; border-radius:8px; box-shadow:0px 16px 24px 0px #0000000F;}
+// *** Mixin end *** //
+
+

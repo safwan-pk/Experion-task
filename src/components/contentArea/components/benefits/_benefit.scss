@@ -1,0 +1,9 @@
+.benefit-box{@include shadow-box; 
+    .bnft-img{max-height:230px; object-fit:cover;}
+    .cont-area{padding:30px 15px;}
+}
+.list-normal{margin:0; padding:0;
+    li{background:url(../../../../assets/images/list-icon.svg) no-repeat left top 3px; padding:0 0 0 25px; list-style:none; margin:0 0 25px; font:14px $roboto-400;
+        span{opacity:70%; width:100%; display:block; line-height:22px; margin-top:5px;}
+    }
+}

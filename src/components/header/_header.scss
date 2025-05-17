@@ -1,1 +1,58 @@
-header{background:grey; position:fixed; width:100%; top:0;}
+header{background:#fff; border-bottom:1px solid #E5E5EC; position:fixed; z-index:998; width:100%; top:0; padding:13px 30px 13px 110px; @include flex-row; justify-content:space-between; flex-wrap:wrap;
+    .menu-button{display:none;}
+    .head-right-area{@include flex-row; flex-wrap:wrap;}
+}
+.gt-score-area{box-shadow:0px 0px 7px 0px #00000012; background:$white-color; border-radius:5px; overflow:hidden; @include flex-row;
+    .main-score{background:$orange-color; min-width:85px; padding:6px 8px; @include flex-column; border-radius:5px 0 0 5px;
+        span{font:17px $roboto-600;}
+        span,p{color:#56380B;}
+    }
+    .icon-score{@include flex-row; padding:0 7px;
+        li{padding:0 5px; list-style:none; text-align:center;}
+        p{font-size:11px; color:$text-color-dark; margin:3px 0 0 0;}
+    }
+
+}
+.head-profile-area{
+    .head-profile-area-inn{@include flex-row;}
+    .icon-btn{margin:0 14px 0 0;}
+    .cart-icon-head.notify{position:relative;
+        &::after{content:""; width:8px; height:8px; background:$red-color; display:block; border-radius:50%; position:absolute; top:5px; right:3px;}
+    }
+    .dropdown{padding:0 0 0 10px; border-left:1px solid #0F255F;
+        .btn{border:0; padding:0}
+        .dropdown-item:active{background:$violet-color;}
+    }
+}
+
+
+@media (max-width:991px) {
+    header{flex-direction:column;
+        .head-search-area{width:100%; margin:10px auto;}
+        .head-right-area{justify-content:space-between; width:100%;}
+        .head-name-area .title2{font-size:20px;}
+    }
+    
+}
+@media (max-width: 767px) {
+    header{padding:20px 0px 13px 0px;
+        .menu-button{display:block; background:none; border:0; padding:0;}
+        .head-right-area{flex-direction:column;}
+        .head-search-area{order:3; margin:20px auto 5px; padding-right:18px;}
+        .gt-score-area{order:2; width:100%; align-items:stretch; border-radius:0;
+            .main-score{flex-direction:row; padding:14px 20px; border-radius:0;
+                span{margin-right:7px;}
+            }
+            .icon-score{flex:1; justify-content:space-around;
+                li{display:flex; align-items:center;
+                    svg{margin-right:7px;}
+                }
+            }
+        }
+        .head-profile-area{order:1; display:flex; justify-content:space-between; width:100%; margin-bottom:20px;
+            .dropdown .btn img{width:24px; height:24px;}
+        }
+    } 
+
+
+}
