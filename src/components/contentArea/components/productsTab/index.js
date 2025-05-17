@@ -1,8 +1,13 @@
+/**
+ * ProductsTab component that displays product listings in a tabbed interface
+ * Shows different categories of shoes with product details and ratings
+ */
 import React from 'react';
 import product1 from '../../../../assets/images/prod-1.jpg';
 import product2 from '../../../../assets/images/prod-2.jpg';
 import product3 from '../../../../assets/images/prod-3.jpg';
 
+// Sample product data with details for display
 const productData = [
     {
       id: 1,
@@ -42,12 +47,12 @@ const productData = [
     // Add more product objects as needed
   ];
 
-
 function ProductsTab() {
     return (
         <div>
-
+            {/* Main product tab container with navigation and content */}
             <div className="product-tab mt-4">
+                {/* Navigation area with tabs for different shoe categories */}
                 <div className="nav-area d-flex flex-wrap justify-content-between align-items-center mb-4 pb-2">
                     <h4 className="title4 w-100">shoes</h4>
                     <ul className="nav nav-tabs" id="myTab" role="tablist">
@@ -75,54 +80,55 @@ function ProductsTab() {
                     </ul>
                     <button className="border-btn">View all</button>
                 </div>
+                {/* Tab content area displaying products based on selected tab */}
                 <div className="tab-content" id="myTabContent">
                     <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <div className="row">
                             {productData.map((product) => (
-                                <div className="col-md-4 mb-4">
-                                <div className="prod-item-box" key={product.id}>
-                                <div className="img-area">
-                                {product.badge && (
-                                    <span className="seller-badge">{product.badge}</span>
-                                )}
-                                    <img src={product.image} alt="Product" className="img-fluid" />
-                                </div>
-                                <h5 className="title5 roboto-medium mb-1">{product.title}</h5>
-                                <p className="mb-2">{product.subtitle}</p>
-                                <h6 className="title6 roboto-bold">Rs.{product.price}</h6>
-                                <div className="mt-4">
-                                    <h5 className="title5 roboto-medium">Description</h5>
-                                    <p>{product.description}</p>
-                                </div>
-                                <div className="rating me-2">
-                                    <div>
-                                    {[...Array(5)].map((_, index) => (
-                                        <span
-                                        key={index}
-                                        className={`star ${index < product.ratings ? "active" : ""}`}
-                                        >
-                                        ★
-                                        </span>
-                                    ))}
+                                <div className="col-md-4 mb-4" key={product.id}>
+                                    <div className="prod-item-box">
+                                        <div className="img-area">
+                                            {product.badge && (
+                                                <span className="seller-badge">{product.badge}</span>
+                                            )}
+                                            <img src={product.image} alt="Product" className="img-fluid" />
+                                        </div>
+                                        <h5 className="title5 roboto-medium mb-1">{product.title}</h5>
+                                        <p className="mb-2">{product.subtitle}</p>
+                                        <h6 className="title6 roboto-bold">Rs.{product.price}</h6>
+                                        <div className="mt-4">
+                                            <h5 className="title5 roboto-medium">Description</h5>
+                                            <p>{product.description}</p>
+                                        </div>
+                                        <div className="rating me-2">
+                                            <div>
+                                                {[...Array(5)].map((_, index) => (
+                                                    <span
+                                                        key={index}
+                                                        className={`star ${index < product.ratings ? "active" : ""}`}
+                                                    >
+                                                        ★
+                                                    </span>
+                                                ))}
+                                            </div>
+                                            <p className="count mb-0">{product.ratingCount} ratings</p>
+                                        </div>
                                     </div>
-                                    <p className="count mb-0">{product.ratingCount} ratings</p>
-                                </div>
-                                </div>
                                 </div>
                             ))}
                         </div>
-                    
                     </div>
+                    {/* Empty tab panes for other categories */}
                     <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    No data...
+                        No data...
                     </div>
                     <div className="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                    No data...
+                        No data...
                     </div>
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default ProductsTab
+export default ProductsTab;
